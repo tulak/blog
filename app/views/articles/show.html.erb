@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%= debug @article %>
 <p>
   <strong>Nazov clanku:</strong>
   <h1><%= @article.title %></h1>
@@ -12,14 +13,15 @@
 
 <h2>Autor:</h2>
 <p>
-  <strong>Meno:</strong><%=  @article.author.name %>
+  Meno : <%= @article.author.name %>
 </p>
 <p>
-  <strong>Vek:</strong><%=  @article.author.age %>
+  Vek : <%= @article.author.age %>
 </p>
 <p>
-  <strong>email:</strong><%=  @article.author.email %>
+  email : <%= @article.author.email %>
 </p>
+
 <hr>
 
 <h2>Komentare</h2>

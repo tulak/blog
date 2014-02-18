@@ -11,25 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202152638) do
+ActiveRecord::Schema.define(version: 20140218094533) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "author_id"
   end
+
+  add_index "articles", ["author_id"], name: "index_articles_on_author_id"
 
   create_table "authors", force: true do |t|
     t.string   "name"
-    t.string   "age"
+    t.integer  "age"
     t.string   "email"
-    t.integer  "article_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "authors", ["article_id"], name: "index_authors_on_article_id"
 
   create_table "comments", force: true do |t|
     t.string   "commenter"
@@ -40,5 +40,12 @@ ActiveRecord::Schema.define(version: 20140202152638) do
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+
+  create_table "relations", force: true do |t|
+    t.integer  "article_id"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

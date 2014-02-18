@@ -1,5 +1,5 @@
 class Author < ActiveRecord::Base
-  belongs_to :article
+  has_many :articles
 
-
+  accepts_nested_attributes_for :articles
 end

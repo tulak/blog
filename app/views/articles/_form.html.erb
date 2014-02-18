@@ -21,21 +21,11 @@
     <%= f.text_area :content, :size => "30x10" %>
   </div>
 
-    <%= f.fields_for :author do |author_attributes| %>
-        <div class="field">
-            <%= author_attributes.label :name %><br>
-            <%= author_attributes.text_field :name %>
-        </div>
-        <div class="field">
-            <%= author_attributes.label :age %><br>
-            <%= author_attributes.text_field :age %>
-        </div>
-        <div class="field">
-            <%= author_attributes.label :email %><br>
-            <%= author_attributes.text_field :email %>
-        </div>
+  <div class="field">
+    <%= f.label :author_id %>
+    <%= f.collection_select :author_id, Author.all, :id, :name, :prompt => "Vyber autora" %>
+  </div>
 
-    <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

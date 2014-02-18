@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  age: MyString
+  age: 1
   email: MyString
   article_id: 
 
 two:
   name: MyString
-  age: MyString
+  age: 1
   email: MyString
   article_id: 
